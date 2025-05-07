@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zhoushi1</groupId>
+    <artifactId>aliyun-spring-boot-starter</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>aliyun-spring-boot-starter</name>
+    <url>https://github.com/zhoushi1/aliyun-spring-boot-starter</url>
+    <description>基于阿里云 Java SDK 封装的 Spring Boot Starter</description>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/license/mit</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>zhoushi1</name>
+            <email>qiannanyou9@gmail.com</email>
+            <url>https://github.com/zhoushi1</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/zhoushi1/aliyun-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:git@github.com:zhoushi1/aliyun-spring-boot-starter.git</developerConnection>
+        <url>https://github.com/zhoushi1/aliyun-spring-boot-starter</url>
+    </scm>
+
+    <modules>
+        <module>aliyun-core-spring-boot-starter</module>
+        <module>aliyun-mns-spring-boot-starter</module>
+        <module>aliyun-oss-spring-boot-starter</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.encode>UTF-8</project.encode>
+        <project.build.sourceEncoding>${project.encode}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${project.encode}</project.reporting.outputEncoding>
+        <springboot.version>2.7.18</springboot.version>
+        <lombok.version>1.18.38</lombok.version>
+        <commons-lang3.version>3.17.0</commons-lang3.version>
+        <aliyun-sdk-mns.version>1.3.0</aliyun-sdk-mns.version>
+        <aliyun-sdk-oss.version>3.18.2</aliyun-sdk-oss.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- springboot 自动配置引擎 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${springboot.version}</version>
+            </dependency>
+            <!-- springboot 配置元数据生成器 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${springboot.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- commons-lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- 阿里云mns -->
+            <dependency>
+                <groupId>com.aliyun.mns</groupId>
+                <artifactId>aliyun-sdk-mns</artifactId>
+                <version>${aliyun-sdk-mns.version}</version>
+            </dependency>
+            <!-- 阿里云OSS -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun-sdk-oss.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <parameters>true</parameters>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${springboot.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
