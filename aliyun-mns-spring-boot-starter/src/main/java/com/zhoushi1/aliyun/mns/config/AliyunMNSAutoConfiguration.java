@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(AliyunMNSProperties.class)
 @ConditionalOnClass(MNSService.class)
-@ConditionalOnProperty(prefix = AliyunMNSProperties.PREFIX, value = "enabled", matchIfMissing = true)
+@ConditionalOnProperty(prefix = AliyunMNSProperties.PREFIX, value = "enabled")
 public class AliyunMNSAutoConfiguration {
 
     private final AliyunCoreProperties coreProperties;
@@ -43,10 +43,4 @@ public class AliyunMNSAutoConfiguration {
         );
         return new MNSServiceImpl(cloudAccount);
     }
-
-    // @Bean
-    // @ConditionalOnMissingBean(MNSService.class)
-    // public MNSService mnsService() {
-    //     return new MNSServiceImpl(coreProperties, mnsProperties);
-    // }
 }

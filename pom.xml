@@ -4,7 +4,7 @@
 
     <groupId>io.github.zhoushi1</groupId>
     <artifactId>aliyun-spring-boot-starter</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>pom</packaging>
 
     <name>阿里云 Java SDK - Spring Boot Starters</name>

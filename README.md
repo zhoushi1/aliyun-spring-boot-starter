@@ -16,7 +16,7 @@
 <dependency>
   <groupId>is.github.zhoushi1</groupId>
   <artifactId>（不同模块参考下文）</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 - 阿里云OSS：`aliyun-oss-spring-boot-starter`

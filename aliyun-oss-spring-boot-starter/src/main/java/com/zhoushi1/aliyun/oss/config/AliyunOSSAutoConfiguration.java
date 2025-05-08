@@ -22,7 +22,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(AliyunOSSProperties.class)
 @ConditionalOnClass(OSS.class)
-@ConditionalOnProperty(prefix = AliyunOSSProperties.PREFIX, name = "enabled", matchIfMissing = true)
+@ConditionalOnProperty(prefix = AliyunOSSProperties.PREFIX, name = "enabled")
 public class AliyunOSSAutoConfiguration {
 
     private final AliyunCoreProperties coreProperties;
@@ -33,12 +33,6 @@ public class AliyunOSSAutoConfiguration {
         this.coreProperties = coreProperties;
         this.ossProperties = ossProperties;
     }
-
-    // @Bean
-    // @ConditionalOnMissingBean(OSSService.class)
-    // public OSSService ossService() {
-    //     return new OSSServiceImpl(coreProperties, ossProperties);
-    // }
 
     @Bean
     @ConditionalOnMissingBean(OSSService.class)
