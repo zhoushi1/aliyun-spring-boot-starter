@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.zhoushi1</groupId>
+        <groupId>io.github.zhoushi1</groupId>
         <artifactId>aliyun-spring-boot-starter</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
     </parent>
 
     <artifactId>aliyun-oss-spring-boot-starter</artifactId>
-    <name>aliyun-oss-spring-boot-starter</name>
+    <name>阿里云 Java SDK - Spring Boot Starter for OSS</name>
     <description>基于阿里云 OSS Java SDK 封装的 Spring Boot Starter</description>
 
     <dependencies>
@@ -33,16 +33,15 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+        <!-- aliyun-core -->
+        <dependency>
+            <groupId>io.github.zhoushi1</groupId>
+            <artifactId>aliyun-core-spring-boot-starter</artifactId>
+        </dependency>
         <!-- 阿里云OSS -->
         <dependency>
             <groupId>com.aliyun.oss</groupId>
             <artifactId>aliyun-sdk-oss</artifactId>
-        </dependency>
-        <!-- aliyun-core -->
-        <dependency>
-            <groupId>com.zhoushi1</groupId>
-            <artifactId>aliyun-core-spring-boot-starter</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -55,6 +54,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
