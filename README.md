@@ -1,5 +1,6 @@
 ## 基于 `阿里云 Java SDK` 封装的 `Spring Boot Starter`
 
+[![码云Gitee](https://gitee.com/zhoushi1/aliyun-spring-boot-starter/badge/star.svg?theme=blue)](https://gitee.com/zhoushi1/aliyun-spring-boot-starter)
 [![Github](https://img.shields.io/github/stars/zhoushi1/aliyun-spring-boot-starter?logo=github&style=flat)](https://github.com/zhoushi1/aliyun-spring-boot-starter)
 [![GitHub release](https://img.shields.io/github/release/zhoushi1/aliyun-spring-boot-starter.svg)](https://github.com/zhoushi1/aliyun-spring-boot-starter/releases)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.zhoushi1/aliyun-spring-boot-starter.svg)](http://mvnrepository.com/artifact/io.github.zhoushi1/aliyun-spring-boot-starter)
