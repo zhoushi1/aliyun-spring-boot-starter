@@ -14,7 +14,7 @@
 
 ```xml
 <dependency>
-  <groupId>is.github.zhoushi1</groupId>
+  <groupId>io.github.zhoushi1</groupId>
   <artifactId>（不同模块参考下文）</artifactId>
   <version>1.0.3</version>
 </dependency>
